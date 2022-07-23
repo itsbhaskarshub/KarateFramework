@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"runner\/karate[1:4]","start":1658593838041,"end":1658593838188,"title":"runner\/karate[1:4] 22:00:38.041-22:00:38.188 testing the get call for User Details"},{"id":2,"group":1,"content":"runner\/PullResponse[1:4]","start":1658593839615,"end":1658593840198,"title":"runner\/PullResponse[1:4] 22:00:39.615-22:00:40.198 Get response for xxx"},{"id":3,"group":1,"content":"runner\/GETResponse[1:5]","start":1658593826290,"end":1658593833611,"title":"runner\/GETResponse[1:5] 22:00:26.290-22:00:33.611 Get response for First Name"},{"id":4,"group":1,"content":"runner\/GETResponse[2:14]","start":1658593833627,"end":1658593833787,"title":"runner\/GETResponse[2:14] 22:00:33.627-22:00:33.787 Get response for Last Name"},{"id":5,"group":1,"content":"runner\/GETResponse[3:23]","start":1658593833798,"end":1658593833925,"title":"runner\/GETResponse[3:23] 22:00:33.798-22:00:33.925 Get response for ID"},{"id":6,"group":1,"content":"runner\/SimpleGETResponse2[1:12]","start":1658593840507,"end":1658593840799,"title":"runner\/SimpleGETResponse2[1:12] 22:00:40.507-22:00:40.799 Get response for First Name"},{"id":7,"group":1,"content":"runner\/SimpleGETResponse2[2:21]","start":1658593840805,"end":1658593840980,"title":"runner\/SimpleGETResponse2[2:21] 22:00:40.805-22:00:40.980 Get response for Last Name"},{"id":8,"group":1,"content":"runner\/SimpleGETResponse2[3:30]","start":1658593840986,"end":1658593841230,"title":"runner\/SimpleGETResponse2[3:30] 22:00:40.986-22:00:41.230 Get response for ID"},{"id":9,"group":1,"content":"runner\/PostResponse[1:4]","start":1658593838494,"end":1658593839347,"title":"runner\/PostResponse[1:4] 22:00:38.494-22:00:39.347 Get response for ID"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
